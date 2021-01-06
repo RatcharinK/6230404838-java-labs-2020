@@ -1,5 +1,20 @@
 package harinsalai.ratchanon.lab2;
 
+/**
+ * This CamelCaseNaming program is to accept one arguments:
+ * first word,second word
+ *
+ * The first word is <first_word>
+ * The first word is <second_word>
+ * The concatenate with camel case is <word>
+ *
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 public class CamelCaseNaming {
     public static void main(String[] args) {
         if (args.length != 2) {

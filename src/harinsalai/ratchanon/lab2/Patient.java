@@ -3,7 +3,7 @@ package harinsalai.ratchanon.lab2;
  * This Patient program is to accept three arguments:
  * patient name, patient age and country.
  *  Its output format is
- *  "Patient's name is <patient_name>
+ *   Patient's name is <patient_name>
  *   Patient's age is <patient_age>
  *   <patient_name> comes from <country>
  *

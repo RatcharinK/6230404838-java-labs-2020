@@ -1,5 +1,20 @@
 package harinsalai.ratchanon.lab2;
 
+/**
+ * This CircleCalculator program is to accept one arguments:
+ * radius of a circle
+ *
+ * Its output format is
+ *  An area of a circle with radius of <radius> is <area>
+ *  A circumference is <circumference>
+ *
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 public class CircleCalculator {
     public static void main(String[] args) {
         double radius = Double.parseDouble(args[0]);
