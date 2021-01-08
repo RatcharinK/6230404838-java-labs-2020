@@ -30,6 +30,6 @@ public class CircleCalculator {
         double circumference_rounded = Math.round(circumference*100.0) /100.0;
 
         System.out.println("An area of a circle with radius of "+ radius + " is  " + area_rounded +
-                           "\n A circumference is " + circumference_rounded);
+                           "\nA circumference is " + circumference_rounded);
     }
 }
