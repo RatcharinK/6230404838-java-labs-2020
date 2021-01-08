@@ -17,11 +17,11 @@ package harinsalai.ratchanon.lab2;
 
 public class CircleCalculator {
     public static void main(String[] args) {
-        double radius = Double.parseDouble(args[0]);
-        if (radius == 1) {
-            System.out.println("CircleCalculator <radius of a circle>");
+        if (args.length != 1) {
+            System.err.println("CircleCalculator <radius of a circle>");
             System.exit(0);
         }
+        double radius = Double.parseDouble(args[0]);
         double area =Math.PI*(radius*radius);
         double circumference = 2*Math.PI*radius;
 

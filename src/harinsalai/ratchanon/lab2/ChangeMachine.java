@@ -2,6 +2,7 @@ package harinsalai.ratchanon.lab2;
 /**
  * This ChangeMachine program is to accept four arguments:
  * 1-baht coins, 2-baht coins, 5-baht coins, 10-baht coins
+ *
  * Summation all arguments and output as bills
  * Its output format is
  * 1-baht coins : <coins1>
@@ -24,7 +25,7 @@ package harinsalai.ratchanon.lab2;
 public class ChangeMachine {
     public static void main(String[] args) {
         if (args.length != 4) {
-            System.out.println("ChangeMachine <1-baht coins> <2-baht coins> <5-baht coins> <10-baht coins>");
+            System.err.println("ChangeMachine <1-baht coins> <2-baht coins> <5-baht coins> <10-baht coins>");
             System.exit(0);
         }
         //coins

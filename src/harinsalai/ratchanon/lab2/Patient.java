@@ -17,7 +17,7 @@ package harinsalai.ratchanon.lab2;
 public class Patient {
     public static void main(String[] args) {
         if (args.length != 3) {
-            System.out.println("Patient <patient_name> <patient_age> <country>");
+            System.err.println("Patient <patient_name> <patient_age> <country>");
             System.exit(0);
         }
         String patient_name = args[0];

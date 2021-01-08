@@ -18,7 +18,7 @@ package harinsalai.ratchanon.lab2;
 public class CamelCaseNaming {
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("CamelCaseNaming <First word> <Second word> ");
+            System.err.println("CamelCaseNaming : <First word> <Second word> ");
             System.exit(0);
         }
         String first_word = args[0];
