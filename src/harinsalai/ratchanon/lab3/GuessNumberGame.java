@@ -17,15 +17,17 @@ public class GuessNumberGame {
 
         //Loop
         for (int i = 0; i < 5 ; i++) {
-            System.out.println("Please enter a guess (1-10):");
+            System.out.print("Please enter a guess (1-10):");
             int guess = scan.nextInt();
             remainingtries--;
             if (guess == randomnumber) {
                 System.out.println("Congratulations ! That's correct");
                 System.exit(0);
-            } else if (guess > randomnumber) {
+            }
+            else if (guess > randomnumber) {
                 System.out.println("Please type a lower number! Number of remaining tries:" + remainingtries);
-            } else if (guess < randomnumber) {
+            }
+            else if (guess < randomnumber) {
                 System.out.println("Please type a higher number! Number of remaining tries:" + remainingtries);
             }
             if (remainingtries == 0) {
