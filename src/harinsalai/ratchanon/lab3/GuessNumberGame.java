@@ -1,5 +1,24 @@
 package harinsalai.ratchanon.lab3;
 
+/**
+ * This GuessNumberGame program will generate a random number
+ * and accept input as guess with limit tries
+ *
+ * if it correct
+ *  Its output format is
+ *  Congratulations ! That's correct
+ *
+ * if it not
+ *  Its output format is
+ *  Please type a lower/higher number! Number of remaining tries: <remainingtries>
+ *
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 import java.util.Random;
 import java.util.Scanner;
 

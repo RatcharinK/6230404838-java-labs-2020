@@ -1,5 +1,25 @@
 package harinsalai.ratchanon.lab3;
 
+/**
+ * This GuessNumberGameV3 program will work like GuessNumberGameV2
+ * but not too much same at all
+ * the same is:
+ * GuessNumberGameV3 has function to divide part of working
+ * genAnswer() for generate random number
+ * playGame() for method of game
+ *
+ * the difference is
+ * GuessNumberGameV3 has another function is configGame()
+ * configGame() is for fix range of answer (maxNum, minNum) and maxTries
+ * and playGame() function is restartable while running on GuessNumberGameV3
+ *
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 import java.util.Scanner;
 
 public class GuessNumberGameV3 {
@@ -30,17 +50,18 @@ public class GuessNumberGameV3 {
             minNum = num1;
             maxNum = num2;
         }
+        else {
+            minNum = num1;
+            maxNum = num2;
+        }
         //number of tries
         System.out.print("Enter the number of tries:");
         maxTries = scan.nextInt();
-
     }
-
     //create random number (like V2)
     static void genAnswer() {
         correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
     }
-
     static void playGame() {
         //create boolean for restartable
         boolean countinueplay = true;
@@ -69,7 +90,6 @@ public class GuessNumberGameV3 {
                     } else if (guess < correctNum) {
                         tried++;
                         System.out.println("Please type a higher number! Number of remaining tries:" + (maxTries-tried));
-
                     }
                 }
                 //out of tries

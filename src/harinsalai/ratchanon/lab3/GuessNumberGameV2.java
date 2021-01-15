@@ -1,5 +1,19 @@
 package harinsalai.ratchanon.lab3;
 
+/**
+ * This GuessNumberGameV2 program will work like GuessNumberGame
+ * generate a random number and accept input as guess with limit tries
+ * but the difference is GuessNumberGameV2 has function to divide part of working
+ * genAnswer() for generate random number
+ * playGame() for method of game
+ *
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 import java.util.Scanner;
 
 public class GuessNumberGameV2 {
