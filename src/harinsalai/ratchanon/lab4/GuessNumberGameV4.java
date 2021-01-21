@@ -29,10 +29,12 @@ public class GuessNumberGameV4 {
             minNum = num2;
             maxNum = num1;
         }
+
         else if (num2 > num1){
             minNum = num1;
             maxNum = num2;
         }
+
         else {
             minNum = num1;
             maxNum = num2;
@@ -53,28 +55,36 @@ public class GuessNumberGameV4 {
         boolean countinueplay = true;
         //start for guessing
         boolean wingame = false;
+
         //Loop
         while (countinueplay == true) {
             int tried = 0;
+
             while (wingame == false) {
                 System.out.print("Please enter a guess (" + minNum + " - " + maxNum + "):");
                 int guess = scan.nextInt();
                 //out of answer range
                 if (guess < minNum || guess > maxNum) {
                     System.out.println("The guess number must be in the range " + minNum + " and " + maxNum);
-                } else if (guess > minNum || guess < maxNum) {
+                }
+
+                else if (guess > minNum || guess < maxNum) {
                     guesses[numGuesses] = guess;
                     numGuesses += 1;
+
                     //correct answer
                     if (guess == correctNum) {
                         System.out.println("Congratulations ! That's correct");
                         wingame = true;
                     }
+
                     //incorrect answer
                     else if (guess > correctNum) {
                         tried++;
                         System.out.println("Please type a lower number! Number of remaining tries:" + (maxTries - tried));
-                    } else if (guess < correctNum) {
+                    }
+
+                    else if (guess < correctNum) {
                         tried++;
                         System.out.println("Please type a higher number! Number of remaining tries:" + (maxTries - tried));
                     }
@@ -85,7 +95,8 @@ public class GuessNumberGameV4 {
                 }
 
             }
-            boolean exitgame = false; //loop for ask if want to continue
+            boolean exitgame = false;
+            //loop for ask if want to continue
             while (exitgame == false) {
                 System.out.println("If want to play again type 'y' to continue or 'q' to quit:" +
                         "\nType 'a' to see all your guesses or 'g' to see a guess on a specific play ");
@@ -97,12 +108,18 @@ public class GuessNumberGameV4 {
                     genAnswer();
                     playGames();
 
-                } else if (restartgame.equals("q")) {
+                }
+
+                else if (restartgame.equals("q")) {
                     countinueplay = false;
                     break;
-                } else if (restartgame.equals("a")) {
+                }
+
+                else if (restartgame.equals("a")) {
                     showGuesses();
-                } else if (restartgame.equals("g")) {
+                }
+
+                else if (restartgame.equals("g")) {
                     showSpecific();
                 }
             }
