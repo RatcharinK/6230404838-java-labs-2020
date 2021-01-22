@@ -65,6 +65,10 @@ public class GuessNumberGameV4 {
     static void playGames() {
         //set size for array
         guesses = new int[maxTries];
+        playGame();
+    }
+
+    static void playGame() {
         //create boolean for restartable
         boolean countinueplay = true;
         //start for guessing
