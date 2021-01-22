@@ -1,5 +1,19 @@
 package harinsalai.ratchanon.lab4;
 
+/**
+ * This GuessNumberGameV4 program will work like GuessNumberGameV3
+ * but add array to correct number while guessing
+ * and add new 2 method
+ * showGuesses() for pass 'a' to see all guesses that answered
+ * showSpecific()for pass 'g' to see a guess on a specific play
+ *
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 import java.util.Scanner;
 
 public class GuessNumberGameV4 {
@@ -8,7 +22,7 @@ public class GuessNumberGameV4 {
     static int maxNum = 10;
     static int maxTries = 3;
     static int[] guesses;
-    static int numGuesses = 0; //count guesses when don't use max
+    static int numGuesses = 0;
 
     public static void main(String[] var0) {
         configGame();
@@ -71,13 +85,11 @@ public class GuessNumberGameV4 {
                 else if (guess > minNum || guess < maxNum) {
                     guesses[numGuesses] = guess;
                     numGuesses += 1;
-
                     //correct answer
                     if (guess == correctNum) {
                         System.out.println("Congratulations ! That's correct");
                         wingame = true;
                     }
-
                     //incorrect answer
                     else if (guess > correctNum) {
                         tried++;
@@ -104,10 +116,9 @@ public class GuessNumberGameV4 {
                 if (restartgame.equals("y")) {
                     wingame = false; //return to false for win a game statement
                     numGuesses = 0;
-                    guesses = null;
+                    guesses = null; //make array emty
                     genAnswer();
                     playGames();
-
                 }
 
                 else if (restartgame.equals("q")) {
@@ -136,7 +147,6 @@ public class GuessNumberGameV4 {
             int guessnumber = scan.nextInt();
             System.out.println("Guess number " + guessnumber + " is " + guesses[guessnumber-1]);
         }
-
     }
 
 
