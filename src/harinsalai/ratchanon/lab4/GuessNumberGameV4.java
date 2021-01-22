@@ -116,7 +116,7 @@ public class GuessNumberGameV4 {
                 if (restartgame.equals("y")) {
                     wingame = false; //return to false for win a game statement
                     numGuesses = 0;
-                    guesses = null; //make array emty
+                    guesses = null; //make array empty
                     genAnswer();
                     playGames();
                 }

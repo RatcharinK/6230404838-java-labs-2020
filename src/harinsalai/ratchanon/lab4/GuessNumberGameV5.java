@@ -1,5 +1,18 @@
 package harinsalai.ratchanon.lab4;
 
+/**
+ * This GuessNumberGameV5 program will work like GuessNumberGameV4
+ * and add new 3 method
+ * guessAverage() for pass 'v' to see average of guesses that answered
+ * guessMin() for pass 'm' to see min number of guesses that answered
+ * guessMax() for pass 'x' to see max number of guesses that answered
+ * Author: Ratchanon Harinsalai
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 import java.util.Scanner;
 
 public class GuessNumberGameV5 {
@@ -105,7 +118,7 @@ public class GuessNumberGameV5 {
                 if (restartgame.equals("y")) {
                     wingame = false; //return to false for win a game statement
                     numGuesses = 0;
-                    guesses = null;
+                    guesses = null; //make array empty
                     genAnswer();
                     playGames();
 
@@ -149,7 +162,6 @@ public class GuessNumberGameV5 {
         int guessnumber = scan.nextInt();
         System.out.println("Guess number " + guessnumber + " is " + guesses[guessnumber-1]);
     }
-
     static void guessAverage() {
         float summation = 0;
         for (int i = 0; i < numGuesses; i++) {
@@ -158,7 +170,6 @@ public class GuessNumberGameV5 {
         float average = summation/numGuesses;
         System.out.println("Average = "+average);
     }
-
     static void guessMin() {
         int min = guesses[0];
         for (int i = 0; i < numGuesses; i++) {
@@ -168,7 +179,6 @@ public class GuessNumberGameV5 {
         }
         System.out.println("Min = "+ min);
     }
-
     static void guessMax() {
         int max = guesses[0];
         for (int i = 0; i < numGuesses; i++) {
@@ -178,5 +188,4 @@ public class GuessNumberGameV5 {
         }
         System.out.println("Max = "+ max);
     }
-
 }
