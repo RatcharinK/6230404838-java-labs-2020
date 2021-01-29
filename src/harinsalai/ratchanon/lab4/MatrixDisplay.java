@@ -1,5 +1,26 @@
 package harinsalai.ratchanon.lab4;
 
+/**
+ * This MatrixDisplay program will accept a arguments to be a matrix
+ * with rowDimension and columnDimension must be positive integer and more than 0
+ *
+ * and each method will be like:
+ * inputMatrix() for input variable for matrix
+ * showMatrix() for print normal matrix from of input
+ * showMatrixByRow() for show matrix arrange by row
+ * showMatrixByColumn() for show matrix arrange by column
+ * showMatrixByRowBackward() for show matrix arrange backward by row
+ * showMatrixByColumnBackward() for show matrix arrange backward by row
+ * howMatrixByRowZigzag() for show matrix 2 ways
+ *      first is even rows will arrange by row
+ *      second is ood rows will arrange backward by row
+ *
+ * ID: 623040483-8
+ * Sec: 1
+ * Date:
+ *
+ **/
+
 import java.util.Scanner;
 
 public class MatrixDisplay {
