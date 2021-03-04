@@ -48,10 +48,10 @@ public class DiceGame extends Game{
         //create variable for answer
         String answerLetter = "";
 
-        if (diceRoll < 10 ) {
+        if (diceRoll < 3 ) {
             answerLetter = "l";
         }
-        else if (diceRoll >= 10 ) {
+        else if (diceRoll >= 3 ) {
             answerLetter = "h";
         }
 
