@@ -54,7 +54,7 @@ public class HighLowGame extends DiceGame implements HasRule, UseDice {
     @Override
     public String toString() {
         return "Game name : High-Low Game, Num of players : " + numOfPlayers + ", Dice roll : "
-                + summation +", Player's guess : " + answer + "Number of dice is " + numOfDice;
+                + summation +", Player's guess : " + answer + ", Number of dice is " + numOfDice;
     }
     @Override
     public void playGame() {
@@ -63,10 +63,10 @@ public class HighLowGame extends DiceGame implements HasRule, UseDice {
         //create variable for calculate number that divide high and low
         int middleNumber = (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;
 
-        if (summation < middleNumber) {
+        if (summation <= middleNumber) {
             answerLetter = "l";
         }
-        else if (summation >= middleNumber) {
+        else if (summation > middleNumber) {
             answerLetter = "h";
         }
 

@@ -1,6 +1,7 @@
 package harinsalai.ratchanon.lab6;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard {
     protected int[] cash;
@@ -52,6 +53,13 @@ public class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard
 
     @Override
     public int rollDice() {
-        return (numOfDice*6 - numOfDice + 1)/2 + numOfDice - 1;
+        int sum = 0;
+        for (int i = 0; i < numOfDice; i++) {
+            Random number = new Random();
+            int upperbound = 5;
+            int randomNumber = 1 + (number.nextInt(upperbound));
+            sum += randomNumber;
+        }
+        return sum;
     }
 }

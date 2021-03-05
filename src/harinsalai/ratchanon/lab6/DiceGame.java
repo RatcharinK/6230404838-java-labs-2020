@@ -1,6 +1,5 @@
 package harinsalai.ratchanon.lab6;
 
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -31,11 +30,13 @@ public class DiceGame extends Game{
     public DiceGame() {
         this.answer = "l";
         this.diceRoll = 1 + randomNumber;
+        this.numOfPlayers = 1;
     }
 
     public DiceGame(String answer) {
         this.answer = answer;
         this.diceRoll = 1 + randomNumber;
+        this.numOfPlayers = 1;
     }
 
     @Override
@@ -48,10 +49,10 @@ public class DiceGame extends Game{
         //create variable for answer
         String answerLetter = "";
 
-        if (diceRoll < 3 ) {
+        if (diceRoll <= 3 ) {
             answerLetter = "l";
         }
-        else if (diceRoll >= 3 ) {
+        else if (diceRoll > 3 ) {
             answerLetter = "h";
         }
 
