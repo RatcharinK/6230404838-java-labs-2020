@@ -1,12 +1,14 @@
 package harinsalai.ratchanon.lab6;
 
+import java.util.Arrays;
+
 public class MonopolyGame extends DiceGame implements HasRule, UseDice, UseBoard {
     protected int[] cash;
     protected int numOfDice = 2;
 
     //getter and setter of Cash
-    public int[] getCash() {
-        return cash;
+    public String getCash() {
+        return Arrays.toString(cash);
     }
     public void setCash(int[] cash) {
         this.cash = cash;
