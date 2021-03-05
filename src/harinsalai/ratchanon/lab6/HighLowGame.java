@@ -44,8 +44,8 @@ public class HighLowGame extends DiceGame implements HasRule, UseDice {
     public int rollDice() {
         for (int i =0; i < numOfDice; i++) {
             Random number = new Random();
-            int upperbound = 6;
-            int randomNumber = (number.nextInt(upperbound));
+            int upperbound = 5;
+            int randomNumber = 1 + (number.nextInt(upperbound));
             summation += randomNumber;
         }
         return summation;
@@ -74,6 +74,7 @@ public class HighLowGame extends DiceGame implements HasRule, UseDice {
         if (answer.equals(answerLetter)){
             System.out.println("Congratulations. You win.");
         }
+
         else {
             System.out.println("Sorry. You lose.");
         }
