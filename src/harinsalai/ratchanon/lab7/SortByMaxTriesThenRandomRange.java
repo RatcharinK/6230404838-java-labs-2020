@@ -6,6 +6,7 @@ public class SortByMaxTriesThenRandomRange implements Comparator<GuessNumberGame
     @Override
     public int compare(GuessNumberGameVer4 maxTriesA, GuessNumberGameVer4 maxTriesB) {
         int maxTriesCompare = maxTriesB.getMaxTries()-(maxTriesA.getMaxTries());
-        return maxTriesCompare == 0 ? maxTriesA.getMaxNum() - maxTriesB.getMaxNum() : maxTriesCompare;
+        return maxTriesCompare == 0 ? (maxTriesA.getMaxNum() - maxTriesA.getMinNum()) -
+                (maxTriesB.getMaxNum() - maxTriesB.getMinNum()) : maxTriesCompare;
     }
 }

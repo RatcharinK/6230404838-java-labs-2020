@@ -46,6 +46,7 @@ public class GuessNumberGameVer4 extends GuessNumberGameVer3 {
         testComparingMaxTriesThenRandomRange();
     }
 
+    //use for set variable
     public GuessNumberGameVer4(int minNum, int maxNum, int maxTries) {
         this.minNum = minNum;
         this.maxNum = maxNum;
