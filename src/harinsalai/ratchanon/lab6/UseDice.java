@@ -1,5 +1,5 @@
 package harinsalai.ratchanon.lab6;
 
-interface UseDice {
+public interface UseDice {
     public int rollDice();
 }
