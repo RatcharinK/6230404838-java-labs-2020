@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MySimpleWindow extends JFrame {
-    protected JFrame frame;
-    protected JPanel panel;
+    protected JPanel mainPanel, buttonPanel;
     protected JButton resetButton, submitButton;
 
     protected MySimpleWindow(String name) {
@@ -14,26 +13,29 @@ public class MySimpleWindow extends JFrame {
 
     //create methode for check
     protected void setComponents() {
-        //create frame
-        frame = new JFrame();
-        frame.setLayout(new BorderLayout());
+        setLayout(new BorderLayout());
 
         //create panel
-        panel = new JPanel();
+        mainPanel = new JPanel();
+        buttonPanel = new JPanel();
 
         //create button
         resetButton = new JButton("Reset");
         submitButton = new JButton("Submit");
     }
+
     protected void addComponents() {
         setComponents();
 
         //add button to panel
-        panel.add(resetButton);
-        panel.add(submitButton);
+        buttonPanel.add(resetButton);
+        buttonPanel.add(submitButton);
+
+        //add sub panel to main panel
+        mainPanel.add(buttonPanel);
 
         //add panel to frame
-        add(panel, BorderLayout.SOUTH);
+        add(mainPanel, BorderLayout.SOUTH);
     }
 
     protected void setFrameFeatures() {

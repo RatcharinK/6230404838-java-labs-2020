@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PlayerFormV1 extends MySimpleWindow {
-    protected JPanel playerPanel, radioPanel, namePanel, nationalityPanel, dateofbirthPanel, genderPanel;
+    protected JPanel playerPanel, subPanel1, subPanel2, radioPanel, namePanel, nationalityPanel, dateofbirthPanel, genderPanel;
     protected JLabel nameLabel, nationalityLabel, dateofbirthLabel, genderLabel;
     protected JTextField nameTextField, nationalityTextField, dateofbirthTextField;
     protected JRadioButton maleRadio, femaleRadio;
@@ -19,14 +19,16 @@ public class PlayerFormV1 extends MySimpleWindow {
 
         //crate main panel
         playerPanel = new JPanel(new BorderLayout());
-        playerPanel.setLayout(new GridLayout(4,1));
+        playerPanel.setLayout(new BorderLayout());
 
         //create sub panel
-        namePanel = new JPanel(new BorderLayout());
-        nationalityPanel = new JPanel(new BorderLayout());
-        dateofbirthPanel = new JPanel(new BorderLayout());
-        genderPanel = new JPanel(new BorderLayout());
-        radioPanel = new JPanel(new BorderLayout());
+        subPanel1 = new JPanel(new BorderLayout());
+        subPanel2 = new JPanel(new BorderLayout());
+        namePanel = new JPanel(new GridLayout());
+        nationalityPanel = new JPanel(new GridLayout());
+        dateofbirthPanel = new JPanel(new GridLayout());
+        genderPanel = new JPanel(new GridLayout());
+        radioPanel = new JPanel();
 
         //create radio button
         maleRadio = new JRadioButton("Male");
@@ -39,7 +41,7 @@ public class PlayerFormV1 extends MySimpleWindow {
         //create label
         nameLabel = new JLabel("Name:");
         nationalityLabel = new JLabel("Nationality:");
-        dateofbirthLabel = new JLabel("Date od Birth (eg.,31-01-1990):");
+        dateofbirthLabel = new JLabel("Date of Birth (eg.,31-01-1990):");
         genderLabel = new JLabel("Gender:");
 
         //create text field
@@ -55,7 +57,13 @@ public class PlayerFormV1 extends MySimpleWindow {
         namePanel.add(nameLabel, BorderLayout.CENTER);
         nationalityPanel.add(nationalityLabel, BorderLayout.CENTER);
         dateofbirthPanel.add(dateofbirthLabel, BorderLayout.CENTER);
-        genderPanel.add(genderLabel, BorderLayout.CENTER);
+        genderPanel.add(genderLabel, BorderLayout.WEST);
+
+        //add radio button to sub panel
+        radioButtonGroup.add(maleRadio);
+        radioButtonGroup.add(femaleRadio);
+        radioPanel.add(maleRadio, BorderLayout.WEST);
+        radioPanel.add(femaleRadio, BorderLayout.CENTER);
 
         //add text field to sub panel
         namePanel.add(nameTextField, BorderLayout.EAST);
@@ -63,19 +71,16 @@ public class PlayerFormV1 extends MySimpleWindow {
         dateofbirthPanel.add(dateofbirthTextField, BorderLayout.EAST);
         genderPanel.add(radioPanel, BorderLayout.EAST);
 
-        //add radio button to sub panel
-        radioButtonGroup.add(maleRadio);
-        radioButtonGroup.add(femaleRadio);
-        radioPanel.add(maleRadio, BorderLayout.WEST);
-        radioPanel.add(femaleRadio, BorderLayout.EAST);
+        //add all panel to sub panel
+        subPanel1.add(namePanel, BorderLayout.NORTH);
+        subPanel1.add(nationalityPanel, BorderLayout.CENTER);
+        subPanel2.add(dateofbirthPanel,BorderLayout.CENTER);
+        subPanel2.add(genderPanel, BorderLayout.SOUTH);
 
         //add sub panel to main panel
-        playerPanel.add(namePanel);
-        playerPanel.add(nationalityPanel);
-        playerPanel.add(dateofbirthPanel);
-        playerPanel.add(genderPanel);
-
-        add(playerPanel);
+        playerPanel.add(subPanel1, BorderLayout.NORTH);
+        playerPanel.add(subPanel2, BorderLayout.CENTER);
+        add(playerPanel, BorderLayout.CENTER);
     }
 
     public static void createAndShowGUI() {

@@ -6,7 +6,7 @@ import java.awt.*;
 public class PlayerFormV3 extends PlayerFormV2{
     protected String[] gamesNameList = {"Guess Number Game", "High-Low Game", "Monopoly Game"};
     protected JList gamesList;
-    protected JPanel gamesPanel;
+    protected JPanel gamesPanel, subPanel4;
     protected JLabel gamesLabel;
 
     protected PlayerFormV3(String name) {
@@ -16,10 +16,11 @@ public class PlayerFormV3 extends PlayerFormV2{
     protected void setComponents() {
         super.setComponents();
         //set main panel
-        playerPanel.setLayout(new GridLayout(7,1));
+        playerPanel.setLayout(new BorderLayout());
 
         //create sub panel
-        gamesPanel = new JPanel(new BorderLayout());
+        gamesPanel = new JPanel(new GridLayout());
+        subPanel4 = new JPanel(new BorderLayout());
 
         //create label
         gamesLabel = new JLabel("Games:");
@@ -35,15 +36,17 @@ public class PlayerFormV3 extends PlayerFormV2{
         super.addComponents();
 
         //remove for insert new panel above it
-        playerPanel.remove(notePanel);
+        playerPanel.remove(subPanel3);
 
         //add label and list to sub panel
         gamesPanel.add(gamesLabel, BorderLayout.CENTER);
         gamesPanel.add(gamesList, BorderLayout.EAST);
+        subPanel4.add(playerTypePanel, BorderLayout.NORTH);
+        subPanel4.add(gamesPanel, BorderLayout.CENTER);
+        subPanel4.add(notePanel, BorderLayout.SOUTH);
 
         //add sub panel to main panel
-        playerPanel.add(gamesPanel);
-        playerPanel.add(notePanel);
+        playerPanel.add(subPanel4, BorderLayout.SOUTH);
 
     }
 

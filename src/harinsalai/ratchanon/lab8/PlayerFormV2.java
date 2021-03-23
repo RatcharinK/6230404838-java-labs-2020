@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class PlayerFormV2 extends PlayerFormV1 {
     protected String[] playerType = {"Beginner", "Amateur", "Professional"};
-    protected JPanel playerTypePanel, notePanel;
+    protected JPanel playerTypePanel, notePanel, subPanel3;
     protected JComboBox playerTypeComboBox;
     protected JTextArea noteTextArea;
     protected JLabel playerTypeLabel, noteLabel;
@@ -18,11 +18,12 @@ public class PlayerFormV2 extends PlayerFormV1 {
     protected void setComponents() {
         super.setComponents();
         //set main panel
-        playerPanel.setLayout(new GridLayout(6,1));
+        playerPanel.setLayout(new BorderLayout());
 
         //create sub panel
-        playerTypePanel = new JPanel(new BorderLayout());
+        playerTypePanel = new JPanel(new GridLayout(1, 2));
         notePanel = new JPanel(new BorderLayout());
+        subPanel3 = new JPanel(new BorderLayout());
 
         //create combo box
         playerTypeComboBox = new JComboBox(playerType);
@@ -34,26 +35,24 @@ public class PlayerFormV2 extends PlayerFormV1 {
 
         //create text area
         String noteText = "A game is a structured form of play, usually undertaken for entertainment or fun, and sometimes used as an educational tool.";
-        noteTextArea = new JTextArea();
-        noteTextArea.setText(noteText);
-        noteTextArea.setLineWrap(true);
-        noteTextArea.setRows(3);
-        noteTextArea.setColumns(35);
-        noteScrollPane = new JScrollPane(noteTextArea); //create scroll pane for setting text area to text box
+        noteTextArea = new JTextArea(noteText,3,35);
+        noteTextArea.setLineWrap(true); //make line to fit with current size of area
+        noteScrollPane = new JScrollPane(noteTextArea); //create scroll pane for setting text area
     }
 
     protected void addComponents() {
         super.addComponents();
 
         //add all of things to sub panel
-        playerTypePanel.add(playerTypeLabel, BorderLayout.CENTER);
+        playerTypePanel.add(playerTypeLabel, BorderLayout.WEST);
         playerTypePanel.add(playerTypeComboBox, BorderLayout.EAST);
-        notePanel.add(noteLabel, BorderLayout.CENTER);
-        notePanel.add(noteTextArea, BorderLayout.SOUTH);
+        notePanel.add(noteLabel, BorderLayout.NORTH);
+        notePanel.add(noteScrollPane, BorderLayout.CENTER);
+        subPanel3.add(playerTypePanel, BorderLayout.CENTER);
+        subPanel3.add(notePanel, BorderLayout.PAGE_END);
 
         //add sub panel to main panel
-        playerPanel.add(playerTypePanel);
-        playerPanel.add(notePanel);
+        playerPanel.add(subPanel3, BorderLayout.PAGE_END);
     }
 
     public static void createAndShowGUI() {

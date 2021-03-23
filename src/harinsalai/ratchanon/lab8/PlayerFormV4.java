@@ -38,11 +38,11 @@ public class PlayerFormV4 extends PlayerFormV3 {
         size24MenuItem = new JMenuItem("24");
 
         //set icon to menu item
-        newIcon = new ImageIcon(getClass().getResource("/harinsalai/ratchanon/lab8/New-icon.png"));
+        newIcon = new ImageIcon("src/harinsalai/ratchanon/image/New-icon.png");
         newMenuItem.setIcon(newIcon);
-        saveIcon = new ImageIcon(getClass().getResource("/harinsalai/ratchanon/lab8/Save-icon.png"));
+        saveIcon = new ImageIcon("src/harinsalai/ratchanon/image/Save-icon.png");
         saveMenuItem.setIcon(saveIcon);
-        openIcon = new ImageIcon(getClass().getResource("/harinsalai/ratchanon/lab8/Open-icon.png"));
+        openIcon = new ImageIcon("src/harinsalai/ratchanon/image/Open-icon.png");
         openMenuItem.setIcon(openIcon);
     }
 
@@ -61,6 +61,7 @@ public class PlayerFormV4 extends PlayerFormV3 {
         fileMenu.add(newMenuItem);
         fileMenu.add(openMenuItem);
         fileMenu.add(saveMenuItem);
+        fileMenu.addSeparator();
         fileMenu.add(exitMenuItem);
 
         //add sub menu to menu
