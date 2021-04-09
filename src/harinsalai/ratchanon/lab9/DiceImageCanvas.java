@@ -19,21 +19,16 @@ public class DiceImageCanvas extends JPanel {
     protected int margin = 10;
     public DiceImageCanvas(int diceNumber) {
         this.diceNumber = diceNumber;
-
         // set size
         setSize(new Dimension(canvasWidth, canvasHeight));
-
         // initialize a rectangle which is a background
         square = new Rectangle2D.Double(startSquareX, startSquareY, width, height);
-
         // call method createCircles to place dots on a rectangle
         createCircles();
-
     }
 
     protected void createCircles() {
         // fill red on all circles that will be placed on a rectangle
-
         circleTopLeft = new Ellipse2D.Double(startSquareX + margin,
                                              startSquareY + margin,
                                              circleWidth, circleHeight);
@@ -61,15 +56,14 @@ public class DiceImageCanvas extends JPanel {
         circleBottomRight = new Ellipse2D.Double(startSquareX + width - margin - circleWidth,
                                                  startSquareY + height - margin - circleHeight,
                                                  circleWidth, circleHeight);
-
     }
 
     protected void drawDiceNumber() {
         // depending on a dice number, place red dots properly on a rectangle
         g2d.setColor(Color.WHITE);
         g2d.fill(square);
-
         g2d.setColor(Color.RED);
+
         if (diceNumber == 1) {
             g2d.fill(circleCenter);
             g2d.draw(circleCenter);
@@ -96,7 +90,6 @@ public class DiceImageCanvas extends JPanel {
             g2d.draw(circleTopLeft);
             g2d.fill(circleTopRight);
             g2d.draw(circleTopRight);
-
             g2d.fill(circleBottomLeft);
             g2d.draw(circleBottomLeft);
             g2d.fill(circleBottomRight);
@@ -108,10 +101,8 @@ public class DiceImageCanvas extends JPanel {
             g2d.draw(circleTopLeft);
             g2d.fill(circleTopRight);
             g2d.draw(circleTopRight);
-
             g2d.fill(circleCenter);
             g2d.draw(circleCenter);
-
             g2d.fill(circleBottomLeft);
             g2d.draw(circleBottomLeft);
             g2d.fill(circleBottomRight);
@@ -125,7 +116,6 @@ public class DiceImageCanvas extends JPanel {
             g2d.draw(circleTopCenter);
             g2d.fill(circleTopRight);
             g2d.draw(circleTopRight);
-
             g2d.fill(circleBottomLeft);
             g2d.draw(circleBottomLeft);
             g2d.fill(circleBottomCenter);
